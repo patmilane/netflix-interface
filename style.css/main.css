@@ -1,0 +1,135 @@
+:root{
+
+    --vermelho:#E50914; /*declarando variaveis dentro de css*/
+    --preta: #141414;
+}
+
+*{                   /* para se referir a todo o documento dentro do html */
+    margin:0;
+    padding:0;
+    box-sizing: border-box; /* para os elementos internos tenham o mesmo tamanho q a gente definiu */
+}
+
+/*Elementos base da pagina*/
+
+body{
+background: var(--preta); /*pegando da variavel la em cima */ 
+font-family: 'Times New Roman', Times, serif;
+color: white; /*cor do titulo mr queen, color sozinho é da fonte*/
+
+}
+
+
+header .container{  /*  para pegar só o div container*/
+    display: flex; /* alinhando os elementos ao lado do logo */
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* ajustar espaço entre o logo e o menu*/
+
+}
+
+
+header .logo{ /*logo netflix*/
+    margin-left: 5px;
+    color: var(--vermelho);
+    font-family: 'Arial Black', Times;
+    font-size: 40px;
+
+}
+
+header nav a{  /* edtando os botoes de link do menu*/ /* */
+text-decoration: none;
+color: #AAA;
+margin-right: 10px;
+
+
+}
+
+header nav a:hover{ /* hover é quando eu passo o mouse por cima do menu*/
+    color: #fff;
+}
+
+/*Filme principal*/
+
+.filme-principal{
+    font-size: 16px;
+    background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)100%), url('../img/mrqueen.png'); /*gradiente em cima da imagem pra tornar o texto mais legivel*/
+
+    height: 500px; /*para caber na tela*/
+    background-size: cover; /*manter a imagem no tamanho da caixa*/
+    display: flex; /*joga nossos elementos pro padrao em linha*/
+    flex-direction: column; /*transforma esse padrao em linha em colunas*/
+    justify-content: center; /*todo o texto dentro da classe filme-principal ficará centralizada na div*/
+    align-items: flex-start;
+
+}
+
+.filme-principal .descricao{
+    margin-top: 10px;
+    margin-bottom: 40px;
+    margin-right: 10px;
+}
+
+.titulo{
+    font-size: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: 20px;
+}
+
+.botao{
+    background-color: rgba(0,0,0,0.50);
+    border: none; /*ele vem com valor padrao, entao tenho q tirar*/
+    color: white;
+    padding: 15px;
+    margin-right: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 2s ease all; /*mudar cor suavement*/
+}
+
+.botao:hover{
+    background-color: white;
+    color: black; /*color sozinho é da fonte*/
+}
+
+.botao i{
+    margin-right: 5px;
+}
+
+
+.container{ 
+    margin-left: 30px;/* alinhar tudo q ta dentro de container de 1 vez só */
+
+}
+
+.filme-principal .container{ /*apenas o container q esta em filme-principal*/
+    width: 70%;
+}
+
+.box-filme{
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+
+
+/*RESPONSIVIDADE*/
+
+@media screen and (max-width: 700px) { /* Aqui estou dizedo ao navegador 
+    que quando a tela estiver a 700 pixels (ver no inspecionar chrome), será aplicado as
+    configurações abaixo */
+
+
+    header.container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .botao{
+        margin-top: 5px;
+        width: 190px;
+    }
+
+    
+}
